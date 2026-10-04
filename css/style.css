@@ -1819,15 +1819,17 @@ img {
   }
 }
 
-/* Estilos do link da dataTech */
-.datatech-link {
-  color: var(--color-primary-yellow);
-  font-weight: 700;
+/* Estilos dos créditos dataTech */
+.dev-credits .datatech-link {
+  color: var(--text-light-muted);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.datatech-link:hover {
-  color: #fff;
-  text-decoration: underline;
+.dev-credits .datatech-link strong {
+  font-weight: 700;
+}
+
+.dev-credits .datatech-link:hover {
+  color: var(--color-primary-yellow);
 }
