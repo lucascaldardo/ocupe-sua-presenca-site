@@ -1792,3 +1792,29 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+/* Centraliza os textos do footer no mobile */
+@media (max-width: 768px) {
+  .site-footer {
+    text-align: center;
+  }
+  .site-footer .brand-logo {
+    justify-content: center;
+  }
+  .site-footer .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .site-footer .footer-links li {
+    text-align: center;
+  }
+  .site-footer .footer-links a {
+    justify-content: center;
+  }
+  .footer-bottom {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
