@@ -1833,3 +1833,19 @@ img {
 .dev-credits .datatech-link:hover {
   color: var(--color-primary-yellow);
 }
+
+/* Estilos do link do Instagram no footer */
+.footer-ig-link {
+  color: var(--text-light-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-ig-link .fa-instagram {
+  color: var(--color-primary-yellow);
+  margin-right: 4px;
+}
+
+.footer-ig-link:hover {
+  color: var(--color-primary-yellow);
+}
