@@ -384,4 +384,59 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+  // 8. Accordion Gallery dos 7 Módulos (Exclusivo Desktop)
+  const modulosGallery = document.getElementById('modulosGallery');
+  if (modulosGallery) {
+    const panels = Array.from(modulosGallery.querySelectorAll('.mag-panel'));
+
+    function setGalleryActive(index) {
+      panels.forEach((panel, i) => {
+        panel.classList.remove('is-active', 'tilt-left', 'tilt-right');
+        if (i === index) {
+          panel.classList.add('is-active');
+          panel.setAttribute('aria-current', 'true');
+        } else {
+          panel.removeAttribute('aria-current');
+          if (i < index) {
+            panel.classList.add('tilt-left');
+          } else {
+            panel.classList.add('tilt-right');
+          }
+        }
+      });
+    }
+
+    panels.forEach((panel, i) => {
+      // Expansão ao passar o mouse no Desktop
+      panel.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 992) {
+          setGalleryActive(i);
+        }
+      });
+
+      // Expansão por clique / foco
+      panel.addEventListener('click', () => {
+        setGalleryActive(i);
+      });
+
+      // Acessibilidade por teclado (setas esquerda/direita)
+      panel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          const nextIdx = (i + 1) % panels.length;
+          setGalleryActive(nextIdx);
+          panels[nextIdx].focus();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prevIdx = (i - 1 + panels.length) % panels.length;
+          setGalleryActive(prevIdx);
+          panels[prevIdx].focus();
+        }
+      });
+    });
+
+    // Inicia com o Módulo 1 ativo por padrão
+    setGalleryActive(0);
+  }
 });
