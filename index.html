@@ -193,51 +193,76 @@
         </p>
       </div>
 
-      <div class="eixos-container">
-        <!-- Eixo 1 -->
-        <div class="eixo-card">
-          <span class="eixo-number">01</span>
-          <div class="eixo-icon-wrap"><i class="fas fa-broom"></i></div>
-          <h3 class="eixo-title">Limpar</h3>
-          <span class="eixo-tagline">Reconexão, Emoções & Ancestralidade</span>
-          <p class="eixo-desc">
-            Identificamos e curamos as lealdades invisíveis da sua árvore genealógica. Onde houve perdas, escassez ou dívidas, restauramos a ordem sistêmica.
-          </p>
-          <ul class="eixo-modules-list">
-            <li><i class="fas fa-check"></i> Módulo 1: Presença & Cacau</li>
-            <li><i class="fas fa-check"></i> Módulo 2: Emoções, Energia e Biografia</li>
-            <li><i class="fas fa-check"></i> Módulo 3: Ancestralidade Financeira</li>
-          </ul>
+      <!-- Carrossel de Eixos (Mobile) / Grid (Desktop) -->
+      <div class="eixos-carousel-wrapper">
+        <!-- Indicador de Arraste (Somente Mobile) -->
+        <div class="eixos-swipe-hint" aria-hidden="true">
+          <i class="fas fa-hand-pointer eixos-hand-icon"></i>
+          <span>Arraste para o lado</span>
+          <i class="fas fa-arrow-right eixos-arrow-icon"></i>
         </div>
 
-        <!-- Eixo 2 -->
-        <div class="eixo-card">
-          <span class="eixo-number">02</span>
-          <div class="eixo-icon-wrap"><i class="fas fa-heart"></i></div>
-          <h3 class="eixo-title">Cuidar</h3>
-          <span class="eixo-tagline">Propósito, Hábitos & Ambiências</span>
-          <p class="eixo-desc">
-            Criação de rotinas enriquecedoras, clareza sobre os seus sonhos e valores essenciais, e alinhamento do ambiente para sustentar sua nova vibração.
-          </p>
-          <ul class="eixo-modules-list">
-            <li><i class="fas fa-check"></i> Módulo 4: Propósito, Metas e Clarezas</li>
-            <li><i class="fas fa-check"></i> Módulo 5: Hábitos e Ambiências</li>
-          </ul>
+        <div class="eixos-container" id="eixosTrack">
+          <!-- Eixo 1 -->
+          <div class="eixo-card" data-eixo="0">
+            <span class="eixo-number">01</span>
+            <div class="eixo-icon-wrap"><i class="fas fa-broom"></i></div>
+            <h3 class="eixo-title">Limpar</h3>
+            <span class="eixo-tagline">Reconexão, Emoções & Ancestralidade</span>
+            <p class="eixo-desc">
+              Identificamos e curamos as lealdades invisíveis da sua árvore genealógica. Onde houve perdas, escassez ou dívidas, restauramos a ordem sistêmica.
+            </p>
+            <ul class="eixo-modules-list">
+              <li><i class="fas fa-check"></i> Módulo 1: Presença & Cacau</li>
+              <li><i class="fas fa-check"></i> Módulo 2: Emoções, Energia e Biografia</li>
+              <li><i class="fas fa-check"></i> Módulo 3: Ancestralidade Financeira</li>
+            </ul>
+          </div>
+
+          <!-- Eixo 2 -->
+          <div class="eixo-card" data-eixo="1">
+            <span class="eixo-number">02</span>
+            <div class="eixo-icon-wrap"><i class="fas fa-heart"></i></div>
+            <h3 class="eixo-title">Cuidar</h3>
+            <span class="eixo-tagline">Propósito, Hábitos & Ambiências</span>
+            <p class="eixo-desc">
+              Criação de rotinas enriquecedoras, clareza sobre os seus sonhos e valores essenciais, e alinhamento do ambiente para sustentar sua nova vibração.
+            </p>
+            <ul class="eixo-modules-list">
+              <li><i class="fas fa-check"></i> Módulo 4: Propósito, Metas e Clarezas</li>
+              <li><i class="fas fa-check"></i> Módulo 5: Hábitos e Ambiências</li>
+            </ul>
+          </div>
+
+          <!-- Eixo 3 -->
+          <div class="eixo-card" data-eixo="2">
+            <span class="eixo-number">03</span>
+            <div class="eixo-icon-wrap"><i class="fas fa-chart-line"></i></div>
+            <h3 class="eixo-title">Expandir</h3>
+            <span class="eixo-tagline">Gestão, Orçamento & Plano de Ação</span>
+            <p class="eixo-desc">
+              Estruturação prática das finanças: gerar, gerir, investir na Reserva da Paz e executar um plano de metas de 0 a 90 dias com total acompanhamento.
+            </p>
+            <ul class="eixo-modules-list">
+              <li><i class="fas fa-check"></i> Módulo 6: Gestão Financeira Essencial</li>
+              <li><i class="fas fa-check"></i> Módulo 7: Plano de Ação Prático</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Eixo 3 -->
-        <div class="eixo-card">
-          <span class="eixo-number">03</span>
-          <div class="eixo-icon-wrap"><i class="fas fa-chart-line"></i></div>
-          <h3 class="eixo-title">Expandir</h3>
-          <span class="eixo-tagline">Gestão, Orçamento & Plano de Ação</span>
-          <p class="eixo-desc">
-            Estruturação prática das finanças: gerar, gerir, investir na Reserva da Paz e executar um plano de metas de 0 a 90 dias com total acompanhamento.
-          </p>
-          <ul class="eixo-modules-list">
-            <li><i class="fas fa-check"></i> Módulo 6: Gestão Financeira Essencial</li>
-            <li><i class="fas fa-check"></i> Módulo 7: Plano de Ação Prático</li>
-          </ul>
+        <!-- Controles de Navegação (Somente Mobile) -->
+        <div class="eixos-carousel-controls" aria-label="Navegação dos eixos">
+          <button class="eixos-nav-btn eixos-prev-btn" aria-label="Eixo anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="eixos-dots" id="eixosDots">
+            <button class="eixos-dot active" data-slide="0" aria-label="Ver Eixo 1: Limpar"></button>
+            <button class="eixos-dot" data-slide="1" aria-label="Ver Eixo 2: Cuidar"></button>
+            <button class="eixos-dot" data-slide="2" aria-label="Ver Eixo 3: Expandir"></button>
+          </div>
+          <button class="eixos-nav-btn eixos-next-btn" aria-label="Próximo eixo">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
 
