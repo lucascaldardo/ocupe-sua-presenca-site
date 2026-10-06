@@ -2,7 +2,7 @@
 🎯 Escopo das 3 Landing Pages & Cronograma (+ Hospedagem)
 1ª LP – Mentoria Individual "Ocupe sua Presença" (R$ 5.000,00): Foco principal e lançamento previsto para este ano.
 
-2ª LP – Mentoria em Grupo: Lançamento previsto para Fevereiro de 2027.
+2ª LP – Mentoria em Grupo: Lançamento previsto para 22 de Março de 2027.
 
 3ª LP – Imersão Presencial:
 
