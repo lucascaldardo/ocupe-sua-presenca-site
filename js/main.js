@@ -152,11 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Atualiza estado visual (cards ativos e dots de paginação)
+      // Sincroniza todos os clones do mesmo eixo para terem o mesmo estado,
+      // eliminando qualquer piscar ou re-animação de escala/opacidade ao normalizar a posição.
       function updateActiveStates() {
         const realIndex = ((currentIndex % totalOriginal) + totalOriginal) % totalOriginal;
 
-        allCards.forEach((card, idx) => {
-          if (idx === currentIndex) {
+        allCards.forEach((card) => {
+          const cardEixo = parseInt(card.getAttribute('data-eixo'), 10);
+          if (cardEixo === realIndex) {
             card.classList.add('is-active');
           } else {
             card.classList.remove('is-active');
@@ -175,10 +178,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
+      let animTimer = null;
+
       function setPosition(targetScroll, animate = true) {
+        if (animTimer) {
+          clearTimeout(animTimer);
+          animTimer = null;
+        }
+
         if (animate) {
           eixosTrack.style.transition = 'transform 0.38s cubic-bezier(0.25, 1, 0.5, 1)';
           isAnimating = true;
+          // Fallback de segurança caso transitionend não dispare
+          animTimer = setTimeout(() => {
+            handleLoopNormalize();
+          }, 420);
         } else {
           eixosTrack.style.transition = 'none';
           isAnimating = false;
@@ -194,9 +208,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateActiveStates();
       }
 
-      // Salto invisível no final da transição (loop infinito sem reiniciar visualmente)
-      eixosTrack.addEventListener('transitionend', (e) => {
-        if (e.target !== eixosTrack) return;
+      // Normalização instantânea e imperceptível no final da transição
+      function handleLoopNormalize() {
+        if (animTimer) {
+          clearTimeout(animTimer);
+          animTimer = null;
+        }
         isAnimating = false;
         if (!isMobile) return;
 
@@ -204,18 +221,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentIndex >= totalOriginal * 2) {
           currentIndex -= totalOriginal;
           const targetScroll = getTargetScroll(currentIndex);
-          setPosition(targetScroll, false);
-          void eixosTrack.offsetWidth; // Força repaint sem delay
-          updateActiveStates();
+          eixosTrack.style.transition = 'none';
+          eixosTrack.style.transform = `translate3d(${-targetScroll}px, 0, 0)`;
         } 
         // Se ultrapassou o conjunto original para a esquerda (< 3)
         else if (currentIndex < totalOriginal) {
           currentIndex += totalOriginal;
           const targetScroll = getTargetScroll(currentIndex);
-          setPosition(targetScroll, false);
-          void eixosTrack.offsetWidth;
-          updateActiveStates();
+          eixosTrack.style.transition = 'none';
+          eixosTrack.style.transform = `translate3d(${-targetScroll}px, 0, 0)`;
         }
+      }
+
+      // Salto invisível no final da transição (loop infinito sem reiniciar visualmente)
+      eixosTrack.addEventListener('transitionend', (e) => {
+        if (e.target !== eixosTrack || e.propertyName !== 'transform') return;
+        handleLoopNormalize();
       });
 
       // Botões de navegação
