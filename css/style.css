@@ -570,10 +570,10 @@ img {
 }
 
 .hero-headline {
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-size: clamp(1.85rem, 3.4vw, 2.9rem);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 22px;
   letter-spacing: -0.025em;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
@@ -581,8 +581,7 @@ img {
 
 .hero-headline .highlight-yellow {
   color: var(--color-primary-yellow-light);
-  display: inline-block;
-  white-space: nowrap;
+  display: inline;
   text-shadow: 0 0 28px rgba(218, 162, 17, 0.45);
 }
 
@@ -651,21 +650,38 @@ img {
 .hero-guarantee {
   display: flex;
   align-items: center;
-  gap: 18px;
-  font-size: 0.88rem;
+  gap: 24px;
+  font-size: 0.98rem;
   color: var(--color-cream-sand);
   font-weight: 600;
   flex-wrap: wrap;
 }
 
 .hero-guarantee-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  word-spacing: 0.12em;
+  letter-spacing: 0.01em;
 }
 
 .hero-guarantee-item i {
   color: var(--color-primary-yellow-light);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.hero-guarantee-item .item-text {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.hero-guarantee-item .item-number {
+  font-weight: 800;
+  color: #ffffff;
+  margin-right: 5px;
+  font-size: 1.05em;
+  display: inline-block;
 }
 
 /* Selo de autoridade da mentora na base da hero */
@@ -763,7 +779,7 @@ img {
 
 .pain-card {
   background: #fff;
-  padding: 36px 28px 32px;
+  padding: 38px 28px 34px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(91, 58, 37, 0.08);
   border-top: 4px solid var(--color-terracotta);
@@ -782,18 +798,21 @@ img {
 }
 
 .pain-card-icon {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 20px;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 22px;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(166, 81, 59, 0.1);
-  border: 1.5px solid rgba(166, 81, 59, 0.25);
+  background: rgba(166, 81, 59, 0.09);
+  border: 1.5px solid rgba(166, 81, 59, 0.22);
   font-size: 2.1rem;
   color: var(--color-terracotta);
   transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(166, 81, 59, 0.08);
+  flex-shrink: 0;
 }
 
 .pain-card:hover .pain-card-icon {
@@ -808,6 +827,7 @@ img {
   margin-bottom: 12px;
   text-align: center;
   text-wrap: balance;
+  width: 100%;
 }
 
 .pain-card p {
@@ -818,6 +838,7 @@ img {
   word-spacing: 0.05em;
   text-align: center;
   text-wrap: pretty;
+  width: 100%;
 }
 
 /* ==========================================================
@@ -1091,6 +1112,23 @@ img {
 /* ==========================================================
    GRADE DOS 7 MÓDULOS DETALHADOS (GALERIA DESKTOP & ACCORDION MOBILE)
    ========================================================== */
+.modulos-subtitle-desktop {
+  display: inline;
+}
+
+.modulos-subtitle-mobile {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .modulos-subtitle-desktop {
+    display: none;
+  }
+  .modulos-subtitle-mobile {
+    display: inline;
+  }
+}
+
 .modulos-gallery-wrapper {
   width: 100%;
   max-width: 100%;
@@ -1943,9 +1981,10 @@ img {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   color: var(--color-cream-sand);
   line-height: 1.5;
+  word-spacing: 0.08em;
 }
 
 .offer-benefit-item i {
@@ -1956,6 +1995,13 @@ img {
 }
 
 .offer-benefit-item span {
+  display: inline-block;
+}
+
+.offer-benefit-item .item-number {
+  font-weight: 800;
+  color: #ffffff;
+  margin-right: 4px;
   display: inline-block;
 }
 
@@ -2469,6 +2515,12 @@ img {
   .hero-description {
     font-size: 1rem;
     line-height: 1.6;
+  }
+  
+  .hero-guarantee {
+    font-size: 0.94rem;
+    gap: 12px 18px;
+    justify-content: center;
   }
   
   .hero-pill {

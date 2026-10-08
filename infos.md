@@ -6,9 +6,9 @@
 
 3ª LP – Imersão Presencial:
 
-Botucatu (BTU): 20/03/2027
+Botucatu (BTU): A definir
 
-Ribeirão Preto (RP): 15/05/2027
+Ribeirão Preto (RP): A definir
 
 💳 Modelo de Contratação do Pacote
 Proposta Comercial: Feita para o pacote completo das 3 landing pages.
