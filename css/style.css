@@ -2320,6 +2320,18 @@ img {
   .modules-accordion {
     display: none !important;
   }
+
+  .btn-hero-cta,
+  .hero-mentor-footer-tag {
+    width: 320px;
+    box-sizing: border-box;
+  }
+
+  .btn-hero-cta {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* ==========================================================
@@ -2369,8 +2381,10 @@ img {
   
   .btn-hero-cta {
     align-self: center;
-    width: 100%;
-    max-width: 460px;
+    width: 100% !important;
+    max-width: 340px !important;
+    display: inline-flex;
+    justify-content: center;
   }
   
   .hero-guarantee {
@@ -2380,6 +2394,8 @@ img {
   .hero-mentor-footer-tag {
     margin: 0 auto;
     text-align: left;
+    width: 100% !important;
+    max-width: 340px !important;
   }
   
   .hero-scroll-indicator {
