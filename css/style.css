@@ -2520,7 +2520,7 @@ img {
   
   .hero-headline {
     font-size: 1.35rem;
-    line-height: 1.25;
+    line-height: 1.45;
   }
   
   .hero-description {
@@ -2678,6 +2678,10 @@ img {
 
   .eixo-modules-list {
     margin-top: auto;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .eixos-carousel-controls {
