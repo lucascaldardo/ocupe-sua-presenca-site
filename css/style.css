@@ -1371,15 +1371,15 @@ img {
 }
 
 .mag-badge-eixo.eixo-cuidar {
-  background: rgba(184, 115, 49, 0.2);
-  color: #f7ca88;
-  border: 1px solid rgba(184, 115, 49, 0.45);
+  background: rgba(218, 162, 17, 0.16);
+  color: var(--color-primary-yellow-light);
+  border: 1px solid rgba(218, 162, 17, 0.4);
 }
 
 .mag-badge-eixo.eixo-expandir {
-  background: rgba(166, 81, 59, 0.2);
-  color: #ffb8a6;
-  border: 1px solid rgba(166, 81, 59, 0.45);
+  background: rgba(218, 162, 17, 0.16);
+  color: var(--color-primary-yellow-light);
+  border: 1px solid rgba(218, 162, 17, 0.4);
 }
 
 .mag-badge-highlight {
@@ -2046,6 +2046,8 @@ img {
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .ecosystem-card:hover {
@@ -2094,6 +2096,7 @@ img {
   border-radius: var(--radius-md);
   padding: 16px 20px;
   margin-bottom: 24px;
+  margin-top: auto;
 }
 
 .ecosystem-dates-list .item {
