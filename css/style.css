@@ -939,6 +939,7 @@ img {
   letter-spacing: 0.012em;
   word-spacing: 0.055em;
   text-wrap: pretty;
+  min-height: 155px;
 }
 
 .eixo-modules-list {
@@ -954,13 +955,15 @@ img {
   color: var(--color-primary-brown);
   padding: 6px 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
   gap: 8px;
 }
 
 .eixo-modules-list li i {
   color: var(--color-primary-yellow);
   font-size: 0.75rem;
+  margin-top: 4px;
 }
 
 /* ==========================================================
